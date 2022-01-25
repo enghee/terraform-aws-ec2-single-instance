@@ -10,8 +10,8 @@ terraform {
 }
 
 provider "aws" {
-  profile = "educate"
-  region  = "ap-southeast-1"
+  profile = "INPUT_PROFILE"
+  region  = "INPUT_REGION"
 }
 
 resource "aws_vpc" "myvpc" {
@@ -19,7 +19,7 @@ resource "aws_vpc" "myvpc" {
   instance_tenancy = "default"
   enable_dns_hostnames = "true"
   tags = {
-    Name = "my-test-vpc"
+    Name = "INPUT_TAG_VALUE"
   }
 }
 
@@ -83,7 +83,7 @@ resource "aws_security_group" "my-project-sg" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = [ "172.16.0.0/12", "137.132.0.0/16", "101.78.88.0/24", "203.125.76.0/23", "121.6.0.0/15" ]
+    cidr_blocks = [ "INPUT_CIDR_BLOCKS" ]
   }
   ingress {
     description = "HTTP"
