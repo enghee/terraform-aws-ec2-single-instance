@@ -1,4 +1,4 @@
 variable "my_ssh_key" {
-	default = "EduYeoehKeyPair"
+	default = "INPUT_KEYPAIR"
 }
 
