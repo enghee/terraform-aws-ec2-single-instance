@@ -1,11 +1,10 @@
 resource "aws_instance" "linux_server_1" {
-  ami = "ami-076ccd3e4bdbbe88a"
-  instance_type = "t3.medium"
+  ami = "INPUT_AMI"
+  instance_type = "INPUT_INSTANCE_TYPE"
   associate_public_ip_address = true
   subnet_id = aws_subnet.public.id
   vpc_security_group_ids = [ aws_security_group.my-project-sg.id ]
   key_name = var.my_ssh_key
-  iam_instance_profile = "AmazonSSMRoleForInstancesQuickSetup"
 
   # root disk
   root_block_device {
@@ -33,11 +32,3 @@ output "_02_linux_server_1_ip" {
 data "template_file" "script_server_1" {
   template = "${file("script-server-1.tpl")}"
 }
-
-# notes
-#
-# 
-# miniconda installer script
-# https://repo.anaconda.com/miniconda/Miniconda3-py39_4.10.3-Linux-x86_64.sh
-#
-
