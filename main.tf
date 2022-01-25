@@ -35,7 +35,7 @@ resource "aws_vpc_dhcp_options_association" "dns_resolver" {
 resource "aws_subnet" "public" {
   vpc_id     = aws_vpc.myvpc.id
   cidr_block = "192.168.10.0/24"
-  availability_zone = "ap-southeast-1b"
+  availability_zone = "INPUT_AZ_A"
   map_public_ip_on_launch = "true"
   tags = {
     Name = "public_subnet"
@@ -45,7 +45,7 @@ resource "aws_subnet" "public" {
 resource "aws_subnet" "private" {
   vpc_id     = aws_vpc.myvpc.id
   cidr_block = "192.168.20.0/24"
-  availability_zone = "ap-southeast-1a"
+  availability_zone = "INPUT_AZ_B"
   tags = {
     Name = "private_subnet"
   }
