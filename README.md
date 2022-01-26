@@ -7,6 +7,8 @@ Requires:
 
 Steps:
 1. Specify profile and region for the aws provider in main.tf
-2. Specify ami and instance_type in ec2.tf
-3. Specify the ssh keypair name in var.tf
-4. run terraform init, plan and apply accordingly.
+2. Specify the AZs for the subnets
+3. Review the security group cidr_blocks parameters, in particular, the CIDR range allowed for ssh
+4. Specify ami and instance_type in ec2.tf
+5. Specify the ssh keypair name in var.tf
+6. run terraform init, plan and apply accordingly.
