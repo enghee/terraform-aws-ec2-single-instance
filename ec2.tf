@@ -17,7 +17,7 @@ resource "aws_instance" "linux_server_1" {
   user_data = "${data.template_file.script_server_1.rendered}"
 
   tags = {
-    Name = "ubuntu-test-server-1"
+    Name = "aws-ec2-instance-1"
   }
 }
 
