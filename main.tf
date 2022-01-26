@@ -83,7 +83,7 @@ resource "aws_security_group" "my-project-sg" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = [ "INPUT_CIDR_BLOCKS" ]
+    cidr_blocks = [ "0.0.0.0/0" ]
   }
   ingress {
     description = "HTTP"
