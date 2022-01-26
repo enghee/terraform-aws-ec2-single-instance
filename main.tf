@@ -19,7 +19,7 @@ resource "aws_vpc" "myvpc" {
   instance_tenancy = "default"
   enable_dns_hostnames = "true"
   tags = {
-    Name = "INPUT_TAG_VALUE"
+    Name = "my_vpc"
   }
 }
 
